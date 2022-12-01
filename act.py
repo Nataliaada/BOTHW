@@ -11,7 +11,7 @@ connection = ST.create_connection("list.db")
 def option():
     print("\nВас приветствует справочник!")
     ch = int(input('Введите , что хотите сделать: \n \
-    1: Поиск ID  по имени \n \
+    1: Поиск по имени \n \
     2: Посмотреть телефон \n \
     3: Добавить \n \
     4: Удалить \n \
@@ -22,7 +22,7 @@ def option():
 
     if ch == 1:
         st = str(input("Введите имя : "))
-        select_by_name = "SELECT name, id FROM LIST Where name LIKE \"" + st + "\""
+        select_by_name = "SELECT name, telephon FROM LIST Where name LIKE \"" + st + "\""
         print(ST.execute_read_query(connection, select_by_name))
         exit()
     elif ch == 2:
@@ -56,4 +56,4 @@ def option():
         print('еще раз')
     exit()
 
-# option()
+option()
