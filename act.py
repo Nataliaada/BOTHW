@@ -12,7 +12,7 @@ def option():
     print("\nВас приветствует справочник!")
     ch = int(input('Введите , что хотите сделать: \n \
     1: Поиск по имени \n \
-    2: Посмотреть телефон \n \
+    2: Посмотреть ФИ по номеру телефона \n \
     3: Добавить \n \
     4: Удалить \n \
     5: Редактировать запись \n \
@@ -27,7 +27,7 @@ def option():
         exit()
     elif ch == 2:
         st = str(input("Введите номер телефона: "))
-        select_by_name = "SELECT name, telephon FROM LIST Where telephon LIKE \"" + st + "\""
+        select_by_name = "SELECT name, surname, telephon FROM LIST Where telephon LIKE \"" + st + "\""
         print(ST.execute_read_query(connection, select_by_name))
         exit()
     elif ch == 3:
